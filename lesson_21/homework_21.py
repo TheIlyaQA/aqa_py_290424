@@ -37,3 +37,58 @@ https://petstore.swagger.io/
 
     1. Обробіть відпові
 """
+import requests
+import json
+def get_animal():
+    url = "https://petstore.swagger.io/v2/pet/findByStatus"
+    params = {'status': "available"}
+    response = requests.get(url, params=params)
+    if response.status_code == 200:
+        data = response.json()
+        return data
+    else:
+        print("Wrong status code", response.status_code)
+    print(get_animal())
+
+
+def add_animal():
+    url = 'https://petstore.swagger.io/v2/pet'
+    new_pet = {
+      "id": 218193300512,
+      "category": {
+        "id": 56478,
+        "name": "Garik"
+      },
+      "status": "available"
+}
+    response = requests.post(url, data=json.dumps(new_pet), headers={"Content-Type": "application/json"})
+    if response.status_code == 200:
+        created_data = response.json()
+        print("Animal created", created_data)
+    else:
+        print("Something went wrong:", response.status_code)
+    print(add_animal())
+
+
+def find_animal():
+    url='https://petstore.swagger.io/v2/pet/3'
+    response = requests.get(url)
+    if response.status_code == 200:
+        data = response.json()
+        return data
+    else:
+        print("Ooops, there is no animal :(", response.status_code)
+    print(find_animal())
+
+
+def delete_animal():
+    url = 'https://petstore.swagger.io/v2/pet/1'
+    response = requests.delete(url)
+    if response.status_code == 200:
+        data = response.json()
+        print("Successfully deleted")
+    else:
+        print("Something went wrong", response.status_code)
+    print(delete_animal())
+
+
