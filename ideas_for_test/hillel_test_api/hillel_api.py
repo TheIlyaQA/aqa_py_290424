@@ -53,10 +53,19 @@ class Users():
         return s.put(base_api_url+endpoint, json=request_body)
 
     @staticmethod
-    def resetpassword(s:requests.session, user_id:int, token:str):
-        # TODO: make this part better
+    def resetpassword(s: requests.Session, base_api_url: str, user_id: int, token: str, method='get'):
         endpoint = f"/users/resetpassword/{user_id}/{token}"
-        return s.get(base_api_url+endpoint)
+        if method.lower() == 'get':
+            response = s.get(base_api_url + endpoint)
+        elif method.lower() == 'post':
+            response = s.post(base_api_url + endpoint)
+        else:
+            raise ValueError("Unsupported HTTP method")
+        return response
+
+    # Додав параметр base_api_url для отримання базового URL-адреси API
+    # Додалв параметр method для можливості вибору HTTP-методу запиту.
+    # Врахував обробку помилок для випадків використання непідтримуваного методу за цим ендпоінтом.
 
     @staticmethod
     def email(s: requests.session, request_body: dict):
