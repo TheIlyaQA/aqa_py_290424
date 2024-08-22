@@ -11,7 +11,7 @@ pipeline {
             steps {
                 sh 'python3 -m venv venv'
                 sh '. $WORKSPACE/venv/bin/activate'
-                sh 'pip install -r $WORKSPACE/requirements.txt'
+                sh 'venv/bin/pip install -r $WORKSPACE/requirements.txt'
             }
         }
         stage('Tests') {
