@@ -30,3 +30,6 @@
 2024-06-24 20:52:21,972 - logger - INFO - my_test - 12 - Msg
 2024-06-24 20:54:01,223 - logger - INFO - my_test - 12 - Msg
 2024-08-15 19:40:42,621 - logger - INFO - my_test - 13 - Msg
+2024-08-22 19:55:56,857 - logger - INFO - my_test - 13 - Msg
+2024-08-22 19:56:33,326 - logger - INFO - my_test - 13 - Msg
+2024-08-22 19:57:16,043 - logger - INFO - my_test - 13 - Msg

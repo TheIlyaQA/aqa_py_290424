@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Tests') {
             steps {
-                sh 'python3 -m pytest --junitxml=$WORKSPACE/report.xml'
+                sh 'python3 -m pytest -s --junitxml=$WORKSPACE/report.xml'
                 junit 'report.xml'
             }
         }

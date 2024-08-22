@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="1" failures="0" skipped="0" tests="1" time="6.017" timestamp="2024-08-22T19:57:12.955060" hostname="PF4QXMEK"><testcase classname="" name="lesson_22.test_api" time="0.000"><error message="collection failure">import file mismatch:
+imported module 'test_api' has this __file__ attribute:
+  C:\tp_testing_code\hillel\aqa_290424\lesson_09\test_api.py
+which is not the same as the test file we want to collect:
+  C:\tp_testing_code\hillel\aqa_290424\lesson_22\test_api.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules</error></testcase></testsuite></testsuites>
